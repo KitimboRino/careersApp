@@ -15,7 +15,7 @@ const Sidebar = () => {
             <div className='Sidebar__top'>
                 <img src='background.jpg' alt='Background' />
                 <Avatar className='Sidebar_avatar' />
-                <h2>Rino KItmbo</h2>
+                <h2>Rino Kitimbo</h2>
                 <h4>kitimborinoemma0580@gmail.com</h4>
             </div>
             <div className='sidebar__stats'>
