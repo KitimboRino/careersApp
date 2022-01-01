@@ -14,12 +14,11 @@ const Header = () => {
                 </div>
             </div>
             <div className="header__right">
-                <HeaderOption Icon={Home} title="Home" />
-                <HeaderOption Icon={SupervisorAccount} title=
-                    "My Network" />
-                <HeaderOption Icon={BusinessCenter} title="Jobs" />
-                <HeaderOption Icon={Chat} title="Messaging" />
-                <HeaderOption Icon={Notifications} title="Notifications" />
+                <HeaderOption title="Home" Icon={Home} />
+                <HeaderOption title="My Network" Icon={SupervisorAccount} />
+                <HeaderOption title="Jobs" Icon={BusinessCenter} />
+                <HeaderOption  title="Messaging"  Icon={Chat}/>
+                <HeaderOption title="Notifications"  Icon={Notifications} />
                 <HeaderOption avatar="https://pbs.twimg.com/profile_images/1020939891457241088/fcbu814K_400x400.jpg" title="me"
                 />
             </div>
