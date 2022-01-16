@@ -3,7 +3,16 @@ import React from 'react';
 import './Header.css';
 import HeaderOption from './HeaderOption';
 
+import { useDispatch } from 'react-redux';
+import { logout } from '../features/userSlice'
+import { auth } from '../firebase'
+
 const Header = () => {
+    const dispatch = useDispatch();
+    const logoutApp = () => {
+        auth.signOut();
+        dispatch(logout())
+    }
     return (
         <div className="header">
             <div className="header__left">
@@ -17,10 +26,10 @@ const Header = () => {
                 <HeaderOption title="Home" Icon={Home} />
                 <HeaderOption title="My Network" Icon={SupervisorAccount} />
                 <HeaderOption title="Jobs" Icon={BusinessCenter} />
-                <HeaderOption  title="Messaging"  Icon={Chat}/>
-                <HeaderOption title="Notifications"  Icon={Notifications} />
-                <HeaderOption avatar="https://pbs.twimg.com/profile_images/1020939891457241088/fcbu814K_400x400.jpg" title="me"
-                />
+                <HeaderOption title="Messaging" Icon={Chat} />
+                <HeaderOption title="Notifications" Icon={Notifications} />
+                <HeaderOption avatar={true} title="me"
+                    onClick={logoutApp} />
             </div>
         </div>
     );
