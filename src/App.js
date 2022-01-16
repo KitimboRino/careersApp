@@ -9,6 +9,7 @@ import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
 // import Post from './components/Post';
 import Login from './components/Login';
+import Widgets from './components/widgets'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       {!user ? (<Login />) : (<div className="app__body">
         <Sidebar />
         <Feed />
+        <Widgets />
       </div>
       )}
     </div>
