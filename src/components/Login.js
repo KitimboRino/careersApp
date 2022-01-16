@@ -17,14 +17,18 @@ const Login = () => {
     const register = () => {
         if (!name) return alert('Please enter your Full Name');
         auth.createUserWithEmailAndPassword(email, password)
-            .then(() => {
-                dispatch(login({
-                    email: userAuth.user.email,
-                    uid: userAuth.user.uid,
-                    dispalyName: name,
-                    photoUrl: profilePic
-                }))
+            .then(userAuth => userAuth.user.updateProfile({
+                displayName: name,
+                photoURL: profilePic
             })
+                .then(() => {
+                    dispatch(login({
+                        email: userAuth.user.email,
+                        uid: userAuth.user.uid,
+                        dispalyName: userAuth.user.displayName,
+                        photoUrl: profilePic
+                    }))
+                }))
     }
     const loginToApp = (e) => {
         e.preventDefault();
