@@ -9,7 +9,7 @@ import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
 // import Post from './components/Post';
 import Login from './components/Login';
-import Widgets from './components/widgets'
+import Widgets from './components/Widgets'
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         }))
       }
     })
-  },[])
+  })
 
   return (
     <div className="App">
