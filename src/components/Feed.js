@@ -7,7 +7,11 @@ import './Feed.css'
 import InputOption from './InputOption'
 import Post from './Post'
 
+import { useSelector } from 'react-redux'
+import { selectUser } from '../features/userSlice'
+
 const Feed = () => {
+    const user = useSelector(selectUser)
     const [posts, setPosts] = useState([])
     const [input, setInput] = useState('')
 
@@ -23,10 +27,10 @@ const Feed = () => {
     const sendPost = e => {
         e.preventDefault()
         db.collection('posts').add({
-            name: 'Rino Kitimbo',
-            description: 'This is a test',
-            mesage: 'input',
-            photoUrl: '',
+            name: user.displayName,
+            description: user.email,
+            mesage: input,
+            photoUrl: user.photoUrl ||'',
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
         setInput('')
